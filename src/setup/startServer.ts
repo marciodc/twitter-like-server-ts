@@ -47,8 +47,9 @@ export class Server {
   }
 
   public start(): void {
-    this.app.listen(4040, () => {
-      log.info(`Servidor iniciado na porta ${ 4040 }.`)
+    const port = process.env.PORT
+    this.app.listen(port, () => {
+      log.info(`Servidor iniciado na porta ${ port }.`)
     })
   }
 

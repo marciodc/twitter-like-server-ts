@@ -1,0 +1,1 @@
+{"version":3,"file":"error_nao_autorizado.js","sourceRoot":"","sources":["../../../src/utils/error_nao_autorizado.ts"],"names":[],"mappings":";;;AAAA,mCAAkC;AAElC,MAAa,aAAc,SAAQ,gBAAQ;IAEzC,YAAa,UAAkB,IAAI;QACjC,KAAK,CAAC,gBAAgB,EAAE,GAAG,CAAC,CAAA;QAC5B,IAAI,CAAC,OAAO,GAAG,OAAO,IAAI,uBAAuB,CAAA;IACnD,CAAC;CAEF;AAPD,sCAOC"}

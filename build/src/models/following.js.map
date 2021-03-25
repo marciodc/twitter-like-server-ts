@@ -1,0 +1,1 @@
+{"version":3,"file":"following.js","sourceRoot":"","sources":["../../../src/models/following.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,+DAA2D;AAI3D,IAAa,SAAS,GAAtB,MAAa,SAAU,SAAQ,4BAAK;CAUnC,CAAA;AALC;IADC,6BAAM;;yCACe;AAGtB;IADC,6BAAM;;+CACqB;AARjB,SAAS;IADrB,4BAAK,CAAC,EAAC,SAAS,EAAE,WAAW,EAAE,WAAW,EAAE,IAAI,EAAE,UAAU,EAAE,KAAK,EAAC,CAAC;GACzD,SAAS,CAUrB;AAVY,8BAAS"}

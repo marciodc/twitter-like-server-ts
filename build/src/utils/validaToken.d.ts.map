@@ -1,0 +1,1 @@
+{"version":3,"file":"validaToken.d.ts","sourceRoot":"","sources":["../../../src/utils/validaToken.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAA;AAC3C,OAAO,EAAE,YAAY,EAAE,MAAM,2BAA2B,CAAA;AAGxD,wBAAsB,WAAW,CAC/B,OAAO,EAAE,OAAO,EAChB,QAAQ,EAAE,QAAQ,EAClB,IAAI,EAAE,YAAY,GAAG,SAAS,GAAG,OAAO,CAAC,IAAI,CAAC,CAkC/C"}

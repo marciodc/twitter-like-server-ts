@@ -1,0 +1,1 @@
+{"version":3,"file":"token.js","sourceRoot":"","sources":["../../../src/models/token.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,+DAAuE;AAGvE,IAAa,KAAK,GAAlB,MAAa,KAAM,SAAQ,4BAAK;CAS/B,CAAA;AALC;IAFC,iCAAU;IACV,6BAAM;;oCACa;AAGpB;IADC,6BAAM;;qCACe;AAPX,KAAK;IADjB,4BAAK,CAAC,EAAC,SAAS,EAAE,OAAO,EAAE,WAAW,EAAE,IAAI,EAAE,UAAU,EAAE,KAAK,EAAC,CAAC;GACrD,KAAK,CASjB;AATY,sBAAK"}

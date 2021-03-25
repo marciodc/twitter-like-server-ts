@@ -1,0 +1,1 @@
+{"version":3,"file":"following.d.ts","sourceRoot":"","sources":["../../../src/route/following.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,SAAS,CAAA;AAC7B,OAAO,EAAE,mBAAmB,EAAE,MAAM,oCAAoC,CAAA;AAExE,qBAAa,eAAe;IACnB,aAAa,EAAE,OAAO,CAAC,MAAM,CAAmB;;IAOhD,gBAAgB,CAAC,UAAU,EAAE,mBAAmB,GAAG,IAAI;CAI/D"}

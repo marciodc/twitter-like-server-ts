@@ -20,6 +20,9 @@ export class Database {
       define: {
         freezeTableName: true,
       },
+      dialectOptions: {
+        ssl: true
+      }
     })
 
     this.connection.addModels([User, Message, Token, Following]);

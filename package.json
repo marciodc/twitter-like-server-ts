@@ -65,6 +65,7 @@
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.5.0",
     "sequelize-typescript": "^2.0",
+    "ts-node": "^9.1.1",
     "uuid": "8.3.1",
     "winston": "^3.3.3"
   }

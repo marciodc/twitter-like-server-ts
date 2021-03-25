@@ -1,0 +1,8 @@
+node_modules/
+build/
+log/
+*.lock
+.vscode/
+package-lock.json
+.env
+.env.example

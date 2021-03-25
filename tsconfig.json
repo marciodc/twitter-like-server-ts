@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "outDir": "./build",
+    "module": "commonjs",
+    "target": "es6",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "locale": "pt-BR",
+    "skipLibCheck": true,
+    "allowJs": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test/**/*.ts"
+  ]
+}

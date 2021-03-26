@@ -8,11 +8,12 @@ import { Database } from '../database/database'
 // Rotas
 import { UserRouter, MessageRouter, PublicRouter, FollowingRouter } from '../route'
 import '../utils/dotenv'
+import { SocketServer } from '../socket/socketServer'
 
-// Server Class
-export class Server {
+export class StartServer {
   public app: Application
   public conn: Database
+  private socketServer: typeof SocketServer
 
   constructor() {
     this.app = express()
@@ -48,9 +49,11 @@ export class Server {
 
   public start(): void {
     const port = process.env.PORT
-    this.app.listen(port, () => {
+    const server = this.app.listen(port, () => {
       log.info(`Servidor iniciado na porta ${ port }.`)
     })
-  }
 
+    this.socketServer = SocketServer
+    this.socketServer.createServer(server)
+  }
 }

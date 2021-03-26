@@ -1,4 +1,4 @@
-import { Server } from './setup/startServer'
+import { StartServer } from './setup/startServer'
 
-const server = new Server()
+const server = new StartServer()
 server.start()

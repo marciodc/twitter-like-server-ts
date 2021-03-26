@@ -2,18 +2,27 @@ import { IMessage } from "../interfaces";
 import { Message, User } from "../models";
 import { Database } from "../database"
 import { QueryTypes } from "sequelize";
+import { SocketServer } from "../socket/socketServer";
 
 export class MessageService {
 
+  private socketServer: typeof SocketServer
+
+  constructor () {
+    this.socketServer = SocketServer
+  }
+
   public async createMessage(userId: string, data: IMessage) {
     try {
-      return await Message.create({
+      const message = await Message.create({
         userId: userId,
         text: data.text,
         dateTime: new Date(),
         public: data.public,
         color: data.color
       })
+      this.following(userId)
+      return message
     } catch (e) {
       throw new Error (e)
     }
@@ -133,6 +142,25 @@ export class MessageService {
       } else {
         return {}
       }
+    } catch (e) {
+      throw new Error (e)
+    } finally {
+      db.connection.close;
+    }
+  }
+
+  public async following(userId: string) {
+    const db = new Database
+    try {
+      const users = await db.connection.query(`
+        select user_id
+        from following 
+        where follow_user_id = $1
+      `, { bind: [userId], type: QueryTypes.SELECT })
+
+      users.forEach(user => {
+        this.socketServer.sendMEssage(user['user_id'])
+      })
     } catch (e) {
       throw new Error (e)
     } finally {

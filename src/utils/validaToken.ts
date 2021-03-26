@@ -9,7 +9,8 @@ export async function validaToken(
 
   if (request.url === '/public' || request.url === '/user/signup' ||
       request.url === '/user/login' || request.url === '/user/login/google' ||
-      request.url === '/user/login/facebook') {
+      request.url === '/user/login/facebook' ||
+      request.url.substring(0, 10) === '/socket.io') {
     next()
     return
   }

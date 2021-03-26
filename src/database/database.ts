@@ -19,13 +19,13 @@ export class Database {
       logging: msg => { console.log(msg) },
       define: {
         freezeTableName: true,
-      },
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        }
-      }
+      }// ,
+      // dialectOptions: {
+      //   ssl: {
+      //     require: true,
+      //     rejectUnauthorized: false
+      //   }
+      // }
     })
 
     this.connection.addModels([User, Message, Token, Following]);

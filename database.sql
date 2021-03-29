@@ -42,7 +42,7 @@ CREATE TABLE public.message (
 	public bool NULL,
 	color int2 NULL,
 	CONSTRAINT pk_message PRIMARY KEY (id),
-	CONSTRAINT fk_message FOREIGN KEY (user_id) REFERENCES users(id)
+	CONSTRAINT fk_message FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- Drop table
@@ -52,5 +52,6 @@ CREATE TABLE public.message (
 CREATE TABLE public."following" (
 	id uuid NOT NULL DEFAULT uuid_generate_v4(),
 	user_id uuid NOT NULL,
-	follow_user_id uuid NULL
+	follow_user_id uuid NULL,
+	CONSTRAINT fk_following_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );

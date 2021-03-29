@@ -44,7 +44,7 @@ export class UserController {
     ): Promise<void> => {
     try {
       const { userId } = request.params
-      const name = request.query.q != 'null' ? String(request.query.name): null
+      const name = request.query.name != 'null' ? String(request.query.name): null
       const login = await this.userService.searchUser(userId, name)
       response.status(200).json(login)
     } catch (error) {

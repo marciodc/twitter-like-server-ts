@@ -32,12 +32,12 @@ export class MessageService {
     const db = new Database
     try {
       return await db.connection.query(`
-        select u.id, u.name, m."text", m.color, m.date_time
+        select u.id, u.name, m."text", m.color, m.date_time, m.public
         from message m 
         inner join users u on u.id = m.user_id
         inner join following f on u.id = m.user_id 
         where f.user_id = $1 or m.user_id = $1
-        group by 1, 2, 3, 4, 5
+        group by 1, 2, 3, 4, 5, 6
         order by m.date_time desc
       `, { bind: [userId], type: QueryTypes.SELECT });
     } catch (e) {
@@ -159,7 +159,7 @@ export class MessageService {
       `, { bind: [userId], type: QueryTypes.SELECT })
 
       users.forEach(user => {
-        this.socketServer.sendMEssage(user['user_id'])
+        this.socketServer.sendMessage(user['user_id'])
       })
     } catch (e) {
       throw new Error (e)

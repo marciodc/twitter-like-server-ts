@@ -29,7 +29,7 @@ class SocketServerClass {
     })
   }
 
-  async sendMEssage(userId: String) {
+  async sendMessage(userId: String) {
     this.io.sockets.sockets.forEach(function (client: any) {
         if (client.userId == userId) {
           client.emit('newMessage', 'NewMessage')

@@ -1,12 +1,12 @@
-import { compareSync } from "bcrypt";
-import { ILogin } from "../interfaces/login";
-import { IUser } from "../interfaces";
-import { Token, User } from "../models";
+import { compareSync } from "bcrypt"
+import { ILogin } from "../interfaces/login"
+import { IUser } from "../interfaces"
+import { Token, User } from "../models"
 import { Database } from "../database"
-import { QueryTypes } from "sequelize";
+import { QueryTypes } from "sequelize"
 import { v4 } from 'uuid'
 import bcrypt from 'bcrypt'
-import { OAuth2Client } from 'google-auth-library';
+import { OAuth2Client } from 'google-auth-library'
 const nodeFbLogin = require('node-fb-login')
 
 export class UserService {
@@ -48,6 +48,10 @@ export class UserService {
 
   public async signup(data: IUser) {
     try {
+      if (data.name.length < 3) throw new Error ('Nome muito pequeno')
+      if (!this.validateEmail(data.email)) throw new Error ('Email inválido')
+      if (data.password.length < 6) throw new Error ('Senha muito pequena')
+
       let user = await User.create({
         name: data.name,
         email: data.email,
@@ -76,7 +80,7 @@ export class UserService {
           else
           false
           end
-          as following 
+          as following
           from users u
           left join following f on f.follow_user_id = u.id 
           where upper(u.name) ilike $2
@@ -152,6 +156,11 @@ export class UserService {
 
   public encryptPassword = function (password: string): string {
     return bcrypt.hashSync(password, 10)
+  }
+
+  public validateEmail(str: string) {
+    var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    return pattern.test(str)
   }
 
 }
